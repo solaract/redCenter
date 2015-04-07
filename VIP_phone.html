@@ -12,11 +12,13 @@
         <div class="personal_info">
             <div class="basic_info">
                 <img class="face" src="img/face.png" alt="头像" />
-                <div class="na_nu">
-                    <p class="name">刘金丽</p>
-                    <p class="num">2013214388</p>
-                </div>
-                <button class="change">修改资料</button>
+                <form id="form_info" action="#" autocomplete="on" method="post">
+                    <div class="na_nu">
+                        <input id="name" name="username" type="text" value="刘金丽" />
+                        <input id="num" name="number" type="text" value="2013214388" />
+                    </div>
+                    <input id="change" type="submit" value="修改资料" />
+                </form>
             </div>
             <div class="basic_integral">
                 <div>
@@ -74,4 +76,5 @@
         </div>
     </div>
 </body>
+<script src="js/change_test.js"></script>
 </html>

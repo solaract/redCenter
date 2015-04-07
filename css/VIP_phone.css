@@ -3,6 +3,9 @@
   margin: 0px;
   padding: 0px;
 }
+input {
+  outline: medium;
+}
 h1 {
   height: 2.84375rem;
   width: 100%;
@@ -52,23 +55,28 @@ h1 {
   float: left;
 }
 .na_nu {
-  max-width: 5.09375rem;
+  width: 5.9375rem;
   overflow: hidden;
   margin-top: 1rem;
   float: left;
 }
-.name {
+#name {
+  height: 1.3125rem;
+  width: 90%;
   font-size: 1rem;
   float: left;
+  border: #ffffff solid 1px;
 }
-.num {
-  max-width: 5.09375rem;
+#num {
+  width: 90% ;
+  height: 1rem;
   float: left;
   margin-top: 0.625rem;
   font-size: 0.75rem;
   color: #9b9a9a;
+  border: #ffffff solid 1px;
 }
-.change {
+#change {
   width: 4.21875rem;
   height: 1.65625rem;
   font-size: 0.6875rem;

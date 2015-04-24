@@ -41,22 +41,34 @@
   margin:0px;
   padding: 0px;
 }
-input{
-  outline: medium;
-}
-h1{
+.header{
   height:91rem/2/16;
   width: 100%;
   margin: 0px;
   padding: 0px;
   .change_color(#ffb325,#ffa225);
   color:#ffffff;
-  text-align: center;
+  .box_shadow(0px,2px,#ebebeb,1px,2px);
+  position: relative;
+}
+.header_center{
+  width: 164rem/16;
+  height: 36rem/16;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+
+}
+.header_logo{
+  height: 32rem/16;
+  margin-top: 4px;
+  float: left;
+}
+.header_title{
   font-size: 28rem/16;
   font-weight: lighter;
   letter-spacing:2px;
-  line-height: 45rem/16;
-  .box_shadow(0px,2px,#ebebeb,1px,2px);
+  float: left;
 }
 .content{
   width:100%;
@@ -65,7 +77,6 @@ h1{
 .personal_info{
   width: 100%;
   background-color: #ffffff;
-//  border-bottom:1px solid #e5e5e5;
 }
 .basic_info{
   width: 100%;
@@ -80,39 +91,25 @@ h1{
   float: left;
 }
 .na_nu{
-  width: 190rem/2/16;
+//  width: 163rem/2/16;
+  height: 47rem/16;
+  max-width: 264rem/16;
   overflow: hidden;
   margin-top: 32rem/2/16;
   float: left;
 }
-#name{
+.name{
 //  height: 42rem/16;
-  height: 21rem/16;
-  width: 90%;
   font-size: 32rem/2/16;
 //  margin-top: 37rem/16;
-  float: left;
-  border: #ffffff solid 1px;
+//  float: left;
 }
-#num{
-  width:90% ;
-  height: 16rem/16;
-  float: left;
+.num{
+  max-width:264rem/2/16 ;
+//  float: left;
   margin-top: 20rem/2/16;
   font-size: 24rem/2/16;
   color:#9b9a9a;
-  border:#ffffff solid 1px;
-}
-#change{
-  width: 135rem/2/16;
-  height: 53rem/2/16;
-  font-size: 22rem/2/16;
-  margin-top: 50rem/2/16;
-  margin-right: 32rem/2/16;
-  color: #02b5ff;
-  background-color: #ffffff;
-  border:1px solid #02b5ff;
-  float: right;
 }
 .basic_integral{
   width: 100%;

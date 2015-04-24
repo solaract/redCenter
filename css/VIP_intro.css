@@ -41,7 +41,8 @@ a {
   right: 0;
 }
 .header_logo {
-  height: 100%;
+  height: 2rem;
+  margin-top: 4px;
   float: left;
 }
 .header_title {

@@ -40,9 +40,10 @@ a {
   bottom: 0;
   right: 0;
 }
-.header_logo {
-  height: 100%;
-  float: left;
+.header_logo{
+    height: 2rem;
+    margin-top: 4px;
+    float: left;
 }
 .header_title {
   font-size: 1.75rem;

@@ -7,18 +7,20 @@
     <title>VIP_phone</title>
 </head>
 <body>
-    <h1>RedCenter</h1>
+    <div class="header">
+        <div class="header_center">
+            <img class="header_logo" src="img/red.png" alt="红岩"/>
+            <h1 class="header_title">会员中心</h1>
+        </div>
+    </div>
     <div class="content">
         <div class="personal_info">
             <div class="basic_info">
                 <img class="face" src="img/face.png" alt="头像" />
-                <form id="form_info" action="#" autocomplete="on" method="post">
-                    <div class="na_nu">
-                        <input id="name" name="username" type="text" value="刘金丽" />
-                        <input id="num" name="number" type="text" value="2013214388" />
-                    </div>
-                    <input id="change" type="submit" value="修改资料" />
-                </form>
+                <div class="na_nu">
+                    <p class="name">刘金丽</p>
+                    <p class="num">2013214388</p>
+                </div>
             </div>
             <div class="basic_integral">
                 <div>
@@ -37,8 +39,8 @@
                     <p class="det_value">530分</p>
                 </div>
                 <div class="detail">
-                    <img class="det_img" src="img/talk.png" alt="图标">
-                    <p class="det_name">BT dowm铺</p>
+                    <img class="det_img" src="img/BT.png" alt="图标">
+                    <p class="det_name">BT down铺</p>
                     <p class="det_value">530分</p>
                 </div>
                 <div class="detail">
@@ -76,5 +78,4 @@
         </div>
     </div>
 </body>
-<script src="js/change_test.js"></script>
 </html>

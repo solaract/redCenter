@@ -1,0 +1,19 @@
+body {
+  background-color: #eee;
+}
+.container-center {
+  width: 300px;
+  margin: 150px auto 0 auto;
+}
+.form-heading {
+  margin-bottom: 50px;
+}
+.form_forget {
+  margin-top: 10px;
+  float: right;
+}
+@media (max-width: 768px) {
+  a.col-xs-12 {
+    margin-top: 10px;
+  }
+}

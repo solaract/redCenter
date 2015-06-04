@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+     <!--标题图标-->
+    <!--<link rel="icon" href="../../favicon.ico">-->
+
+    <title>会员中心</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <!--<div class="container-center">-->
+      <form class="container-center" target="http://hongyan.cqupt.edu.cn/RedCenter/Api/Handle/login" method="post">
+        <h1 class="form-heading text-center">会员中心</h1>
+          <div class="form-group">
+              <label for="inputUser" class="sr-only">user</label>
+              <input name="user" type="text" id="inputUser" class="form-control" placeholder="学号" required autofocus>
+          </div>
+          <div class="form-group">
+              <label for="inputPassword" class="sr-only">Password</label>
+              <input name="password" type="password" id="inputPassword" class="form-control" placeholder="ucenter/重邮通行证/身份证后六位" required>
+          </div>
+
+
+        <!-- <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div> -->
+          <div class="container-fluid">
+              <div class="row">
+                  <button class="btn btn-lg btn-primary col-md-8 col-sm-8 col-xs-12" type="submit">登陆</button>
+                  <a class="btn btn-lg btn-warning col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-12" href="#">注册</a>
+              </div>
+          </div>
+          <a class="form_forget" href="#">忘记密码?</a>
+
+
+      </form>
+
+
+
+  </body>
+  <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+</html>

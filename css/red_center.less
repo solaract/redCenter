@@ -41,35 +41,98 @@
   "WenQuanYi Micro Hei", sans-serif;
 }
 
-body{
-  background-color: #eee;
-}
+body { padding-top: 100px; }
 .font_fa{
   .font_family();
+}
+.nav_user{
+  margin-top: 17px;
+}
+.nav_out{
+  margin-right: 36px;
+  margin-left: 26px;
+}
+.left_face{
+  width: 200px;
+  height: 200px;
+  overflow: hidden;   //删除
+  margin-top: 30px;
+}
+#intro{
+  height: 80px;
+  resize: none;
 }
 .form_font{
   font-weight: normal;
 }
-.container-center{
-  width: 400px;
-  .center(150px);
-//  background-color: #fff;
+.con_border{
+  border: 1px solid #ddd;
+  .border_radius();
 }
-.form-heading{
-  margin-bottom: 50px;
+.right_det{
+  border-top: transparent;
+  padding-top: 15px;
+  height: 747px;
 }
-.form_forget{
-//  margin-top: 10px;
-  float: right;
-  cursor: pointer;
+.left_table{
+  margin-top: 10px;
+  text-align: center;
 }
-.form_remember{
-  margin-left: 108px;
+#right_nav_rule{
+  padding-right: 0;
+//  display: none;
 }
-.form_sub{
-  width: 180px;
-//  height: 24px;
-  margin-top: 20px;
+#right_nav_center{
+  padding-right: 0;
+//  display: none;
+}
+#right_nav_exchange{
+  margin-bottom: 15px;
+//  display: none;
+}
+.right_det_contair{
+  height: 720px;
+  padding-right: 0;
+}
+#right_contair_rule{
+  margin-bottom: 15px;
+  table{
+    margin-bottom: 0;
+  }
+//  display: none;
+}
+#right_contair_center{
+//  display: none;
+}
+#right_contair_level{
+//  display: none;
+}
+#right_contair_exchange{
+//  margin-top: 15px;
+  height: 661px;
+  img{
+    width: 100%;
+  }
+  a{
+    width: 75px;
+  }
+//  display: none;
+}
+#right_contair_have{
+  height: 661px;
+  img{
+    height: 100px;
+    width: 100px;
+  }
+  span{
+    font-size: 16px;
+    margin-left: 40px;
+  }
+  display: none;
+}
+#right_contair_help{
+  height: 661px;
+  display: none;
 }
 .complete{
   width: 100%;
@@ -79,11 +142,11 @@ body{
   right: 0;
   form{
     width: 400px;
-    .center(160px);
+    .center(50px);
     position: relative;
     z-index: 2;
   }
-    display: none;
+  display: none;
 }
 .complete_bac{
   width: 100%;
@@ -105,7 +168,7 @@ body{
   resize: none;
 }
 .complete_info{
-  //  width: 315px;
+//  width: 315px;
   float: left;
   margin-left: 74px;
   margin-bottom: 0;
@@ -114,15 +177,4 @@ body{
 .complete_sub{
   width: 150px;
   margin-left: 172px;
-}
-#form_change{
-  display: none;
-}
-#form_ask{
-//   display: none;
-}
-@media (max-width: 768px) {
-  a.col-xs-12{
-    margin-top: 10px;
-  }
 }

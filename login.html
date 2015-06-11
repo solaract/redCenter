@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <!--<meta name="description" content="">-->
+    <!--<meta name="author" content="">-->
      <!--标题图标-->
     <!--<link rel="icon" href="../../favicon.ico">-->
 
-    <title>会员中心</title>
+    <title>登陆</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -20,37 +20,74 @@
   <body>
 
     <!--<div class="container-center">-->
-      <form class="container-center" target="http://hongyan.cqupt.edu.cn/RedCenter/Api/Handle/login" method="post">
+      <form id="form_login" class="container-center form-horizontal font_fa" action="http://hongyan.cqupt.edu.cn/RedCenter/Api/Handle/login" method="post">
         <h1 class="form-heading text-center">会员中心</h1>
-          <div class="form-group">
-              <label for="inputUser" class="sr-only">user</label>
-              <input name="user" type="text" id="inputUser" class="form-control" placeholder="学号" required autofocus>
-          </div>
-          <div class="form-group">
-              <label for="inputPassword" class="sr-only">Password</label>
-              <input name="password" type="password" id="inputPassword" class="form-control" placeholder="ucenter/重邮通行证/身份证后六位" required>
-          </div>
-
-
-        <!-- <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div> -->
-          <div class="container-fluid">
-              <div class="row">
-                  <button class="btn btn-lg btn-primary col-md-8 col-sm-8 col-xs-12" type="submit">登陆</button>
-                  <a class="btn btn-lg btn-warning col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-12" href="#">注册</a>
+          <div class="form-group h4">
+              <label for="inputUser" class="form_font control-label col-md-3 col-lg-3 col-sm-3 col-xs-3">账号：</label>
+              <div class="col-md-9 col-lg-9 col-sm-9 col-xs-9">
+                  <input name="user" type="text" id="inputUser" class="form-control" placeholder="学号" required autofocus>
               </div>
           </div>
-          <a class="form_forget" href="#">忘记密码?</a>
+          <div class="form-group h4">
+              <label for="inputPassword" class="form_font control-label col-md-3 col-lg-3 col-sm-3 col-xs-3">密码：</label>
+              <div class="col-md-9 col-lg-9 col-sm-9 col-xs-9">
+                  <input name="password" type="password" id="inputPassword" class="form-control" placeholder="ucenter/重邮通行证/身份证后六位" required autofocus>
+              </div>
+          </div>
 
+        <div class="checkbox clearfix">
+          <label class="form_remember">
+            <input type="checkbox" value="remember"> 记住密码
+          </label>
+          <a class="form_forget">忘记密码?</a>
+        </div>
 
+        <button class="btn btn-lg btn-primary form_sub center-block" type="submit">登陆</button>
       </form>
-
+    <div class="complete">
+        <div class="complete_bac"></div>
+        <form id="form_ask" class="container-center form-horizontal font_fa" action="#" method="post">
+            <div class="alert complete_head text-center" role="alert">如修改过密码，请验证密保问题修改密码</div>
+            <div class="form-group h4">
+                <label for="inputAsk" class="form_font control-label col-md-5 col-lg-5 col-sm-5 col-xs-5">密保问题：</label>
+                <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
+                    <input name="ask" type="text" id="inputAsk" class="form-control " required>
+                </div>
+            </div>
+            <div class="form-group h4">
+                <label for="inputAns" class="form_font control-label col-md-5 col-lg-5 col-sm-5 col-xs-5">密保答案：</label>
+                <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
+                    <input name="answer" type="text" id="inputAns" class="form-control " required>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary complete_sub" type="submit">确定</button>
+            </div>
+        </form>
+        <form id="form_change" class="container-center form-horizontal font_fa" action="#" method="post">
+            <div class="alert complete_head text-center" role="alert">如修改过密码，请验证密保问题修改密码</div>
+            <div class="form-group h4">
+                <label for="inputPass" class="form_font control-label col-md-5 col-lg-5 col-sm-5 col-xs-5">新密码：</label>
+                <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
+                    <input name="password" type="text" id="inputPass" class="form-control " required>
+                </div>
+            </div>
+            <div class="form-group h4">
+                <label for="inputPass_again" class="form_font control-label col-md-5 col-lg-5 col-sm-5 col-xs-5">确认密码：</label>
+                <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
+                    <input name="password_again" type="text" id="inputPass_again" class="form-control " required>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary complete_sub" type="submit">确定</button>
+            </div>
+        </form>
+    </div>
 
 
   </body>
   <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/form_check.js"></script>
+  <script type="text/javascript" src="js/login.js"></script>
 </html>

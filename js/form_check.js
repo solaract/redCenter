@@ -1,6 +1,12 @@
 /**
  * Created by zxy on 2015/5/31.
  */
+//form_date = {
+//    form:'String',
+//    check:'Array',//[fun,fun]
+//    success:'function',
+//    fail:'function'
+//};
 var form_check = (function(){
     var Constructor = function(form_data){
         var check_arr,success,fail;
@@ -49,8 +55,9 @@ var form_check = (function(){
             return fail;
         }
     };
-    var form_sub = function(target,check,success,fail,is_checked){
+    var form_sub = function(target,check,success,fail){
         target.bind('submit.form_check',function(){
+            var is_checked = true;
             $.each(check,function(index,fun){
                 if(!fun()){
                     is_checked = false;
@@ -78,8 +85,8 @@ var form_check = (function(){
         var check = this.getCheck();
         var success = this.getSuccess();
         var fail = this.getFail();
-        var is_checked = true;
-        form_sub(target,check,success,fail,is_checked);
-
-    }
+//        var is_checked = true;
+        form_sub(target,check,success,fail);
+    };
+    return Constructor;
 })();

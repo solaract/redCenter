@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <!--<meta name="description" content="">-->
+    <!--<meta name="author" content="">-->
+    <!--标题图标-->
+    <!--<link rel="icon" href="../../favicon.ico">-->
+
+    <title>会员中心</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/red_center.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img alt="logo" src="...">
+                </a>
+
+            </div>
+            <h3 class="navbar-text font_fa">会员中心</h3>
+            <p class="navbar-text navbar-right font_fa nav_user">你好，xxxxxxx
+                <a href="#" class="navbar-link font_fa nav_out">退出登录</a>
+            </p>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="row col-lg-3 col-md-3 col-sm-3 col-md-offset-1 col-lg-offset-1 col-sm-offset-1">
+            <div class="con_border">
+                <a href="#" class="left_face thumbnail center-block">
+                    <img src="img/face.jpg"  alt="face">
+                </a>
+                <form class="form-horizontal font_fa" action="#">
+                    <div class="form-group h4">
+                        <label for="name" class="col-lg-3 col-md-4 col-sm-4 control-label form_font">昵称</label>
+                        <div class="col-lg-8 col-md-7 col-sm-7">
+                            <input name="name" type="text" value="mio" class="form-control" id="name" placeholder="新的昵称">
+                        </div>
+                    </div>
+                    <div class="form-group h4">
+                        <label class="col-lg-3 col-md-4 col-sm-4 control-label form_font">等级</label>
+                        <div class="col-lg-9 col-md-8 col-sm-8">
+                            <p class="form-control-static">xxxx</p>
+                        </div>
+                    </div>
+                    <div class="form-group h4">
+                        <label class="col-lg-3 col-md-4 col-sm-4 control-label form_font">积分</label>
+                        <div class="col-lg-9 col-md-8 col-sm-8">
+                            <p class="form-control-static">xxxx</p>
+                        </div>
+                    </div>
+                    <div class="form-group h4">
+                        <label class="col-lg-3 col-md-4 col-sm-4 control-label form_font">排名</label>
+                        <div class="col-lg-9 col-md-8 col-sm-8">
+                            <p class="form-control-static">xxxx</p>
+                        </div>
+                    </div>
+                    <div class="form-group h4">
+                        <label for="intro" class="col-lg-3 col-md-4 col-sm-4 control-label form_font">简介</label>
+                        <div class="col-lg-8 col-md-7 col-sm-7">
+                            <textarea name="intro" class="form-control" id="intro" placeholder="关于我..."></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group h4">
+                        <label for="intro" class="control-label form_font sr-only">保存修改</label>
+                        <button class="btn btn-primary col-md-offset-1 col-lg-offset-1 col-sm-offset-1" type="submit">保存修改</button>
+                    </div>
+                </form>
+            </div>
+
+            <table class="table table-hover con_border left_table text-center">
+                <thead>
+                    <tr>
+                        <th class="text-center">昵称</th>
+                        <th class="text-center">等级</th>
+                        <th class="text-center">积分</th>
+                        <th class="text-center">排名</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>张三</td>
+                        <td>4</td>
+                        <td>122</td>
+                        <td>233</td>
+                    </tr>
+                    <tr>
+                        <td>张三</td>
+                        <td>4</td>
+                        <td>122</td>
+                        <td>233</td>
+                    </tr>
+                    <tr>
+                        <td>张三</td>
+                        <td>4</td>
+                        <td>122</td>
+                        <td>233</td>
+                    </tr>
+                    <tr>
+                        <td>张三</td>
+                        <td>4</td>
+                        <td>122</td>
+                        <td>233</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row col-lg-6 col-md-6 col-sm-6 col-md-offset-1  col-lg-offset-1 col-sm-offset-1 font_fa">
+            <ul class="nav nav-tabs row"  role="tablist">
+                <li role="presentation" class="active"><a class="center1" href="#center"  aria-controls="center" role="tab" data-toggle="tab">我的中心</a></li>
+                <li role="presentation"><a class="rule" href="#rule"  aria-controls="rule" role="tab" data-toggle="tab">积分细则</a></li>
+                <li role="presentation"><a class="level" href="#level"  aria-controls="level" role="tab" data-toggle="tab">积分等级</a></li>
+                <li role="presentation"><a class="exchange" href="#exchange"  aria-controls="exchange" role="tab" data-toggle="tab">兑换中心</a></li>
+            </ul>
+            <div class="container-fluid con_border row right_det tab-content">
+                <div role="tabpanel" id="center" class="tab-pane active">
+                    <!--我的中心菜单-->
+                    <ul class="nav nav-pills nav-stacked col-lg-3 col-md-4 col-sm-4 con_border" id="right_nav_center">
+                        <li role="presentation" class="active text-center btn-sm"><a href="#">所有动态<span class="badge">4</span></a></li>
+                        <li role="presentation" class="text-center btn-sm"><a href="#">BTdown铺<span class="badge">4</span></a></li>
+                        <li role="presentation" class="text-center btn-sm"><a href="#">拾货<span class="badge">4</span></a></li>
+                        <li role="presentation" class="text-center btn-sm"><a href="#">锦瑟南山<span class="badge">4</span></a></li>
+                        <li role="presentation" class="text-center btn-sm"><a href="#">掌上重邮<span class="badge">4</span></a></li>
+                        <li role="presentation" class="text-center btn-sm"><a href="#">重邮小帮手<span class="badge">4</span></a></li>
+                    </ul>
+                    <!--我的中心详细-->
+                    <div class="table-responsive right_det_contair col-lg-9 col-md-8 col-sm-8" id="right_contair_center">
+                        <div class="alert alert-success" role="alert">mio 在重邮小帮手 查看课表，积分+1</div>
+                        <div class="alert alert-success" role="alert">mio 在BTdown铺 上传种子，积分+1</div>
+                        <div class="alert alert-danger" role="alert">mio 在BTdown铺 xxxxxx，积分-11111111111111111111111111111111111111111111111111111</div>
+                        <div class="alert alert-success" role="alert">mio 在BTdown铺 上传种子，积分+1</div>
+                        <div class="alert alert-success" role="alert">mio 在BTdown铺 上传种子，积分+1</div>
+                        <div class="alert alert-success" role="alert">mio 在BTdown铺 上传种子，积分+1</div>
+                        <div class="alert alert-success" role="alert">mio 在BTdown铺 上传种子，积分+1</div>
+                        <div class="alert alert-success" role="alert">mio 在BTdown铺 上传种子，积分+1</div>
+                        <div class="alert alert-success" role="alert">mio 在BTdown铺 上传种子，积分+1</div>
+                        <div class="alert alert-success" role="alert">mio 在BTdown铺 上传种子，积分+1</div>
+                        <div class="alert alert-success" role="alert">mio 在BTdown铺 上传种子，积分+1</div>
+                        <div class="alert alert-success" role="alert">mio 在BTdown铺 上传种子，积分+1</div>
+                    </div>
+                </div>
+                <div role="tabpanel" id="rule" class="tab-pane">
+                    <!--积分细则菜单-->
+                    <ul role="tabpanel" class="tab-pane nav nav-pills nav-stacked col-lg-3 col-md-3 col-sm-3 con_border" id="right_nav_rule">
+                        <li role="presentation" class="text-center btn-sm active"><a href="#">BTdown铺</a></li>
+                        <li role="presentation" class="text-center btn-sm"><a href="#">拾货</a></li>
+                        <li role="presentation" class="text-center btn-sm"><a href="#">锦瑟南山</a></li>
+                        <li role="presentation" class="text-center btn-sm"><a href="#">掌上重邮</a></li>
+                        <li role="presentation" class="text-center btn-sm"><a href="#">重邮小帮手</a></li>
+                    </ul>
+                    <!--积分细则表-->
+                    <div class="table-responsive right_det_contair col-lg-9 col-md-9 col-sm-9" id="right_contair_rule">
+                        <table class="table table-hover con_border text-center">
+                            <thead>
+                            <tr>
+                                <th class="text-center">用户行为</th>
+                                <th class="text-center">积分加减</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>xxxxxx</td>
+                                <td>+1</td>
+                            </tr>
+                            <tr>
+                                <td>xxxxx</td>
+                                <td>+1</td>
+                            </tr>
+                            <tr>
+                                <td>xxxxx</td>
+                                <td>+1</td>
+                            </tr>
+                            <tr>
+                                <td>xxxxx</td>
+                                <td>+1</td>
+                            </tr>
+                            <tr>
+                                <td>xxxxx</td>
+                                <td>+1</td>
+                            </tr>
+                            <tr>
+                                <td>xxxxx</td>
+                                <td>+1</td>
+                            </tr>
+                            <tr>
+                                <td>xxxxx</td>
+                                <td>+1</td>
+                            </tr>
+                            <tr>
+                                <td>xxxxx</td>
+                                <td>+1</td>
+                            </tr>
+                            <tr>
+                                <td>xxxxx</td>
+                                <td>+1</td>
+                            </tr>
+                            <tr>
+                                <td>xxxxx</td>
+                                <td>+1</td>
+                            </tr>
+                            <tr>
+                                <td>xxxxx</td>
+                                <td>+1</td>
+                            </tr>
+                            <tr>
+                                <td>xxxxx</td>
+                                <td>+1</td>
+                            </tr>
+                            <tr>
+                                <td>xxxxx</td>
+                                <td>+1</td>
+                            </tr>
+                            <tr>
+                                <td>xxxxx</td>
+                                <td>+1</td>
+                            </tr>
+                            <tr>
+                                <td>xxxxx</td>
+                                <td>+1</td>
+                            </tr>
+                            <tr>
+                                <td>xxxxx</td>
+                                <td>+1</td>
+                            </tr>
+                            <tr>
+                                <td>xxxxx</td>
+                                <td>+1</td>
+                            </tr>
+                            <tr>
+                                <td>xxxxx</td>
+                                <td>+1</td>
+                            </tr>
+                            <tr>
+                                <td>xxxxx</td>
+                                <td>+1</td>
+                            </tr>
+                            <tr>
+                                <td>xxxxx</td>
+                                <td>+1</td>
+                            </tr>
+                            <tr>
+                                <td>xxxxx</td>
+                                <td>+1</td>
+                            </tr>
+                            <tr>
+                                <td>xxxxx</td>
+                                <td>+1</td>
+                            </tr>
+                            <tr>
+                                <td>xxxxx</td>
+                                <td>+1</td>
+                            </tr>
+                            <tr>
+                                <td>xxxxx</td>
+                                <td>+1</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div role="tabpanel" id="level" class="tab-pane">
+                    <!--积分等级表-->
+                    <div class="table-responsive right_det_contair" id="right_contair_level">
+                        <table class="table table-hover con_border text-center">
+                            <thead>
+                            <tr>
+                                <th class="text-center">积分</th>
+                                <th class="text-center">等级</th>
+                                <th class="text-center">图标</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1~10</td>
+                                <td>1</td>
+                                <td><span class="glyphicon glyphicon-star" aria-hidden="true"></span></td>
+                            </tr>
+                            <tr>
+                                <td>10~100</td>
+                                <td>2</td>
+                                <td>
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10~100</td>
+                                <td>2</td>
+                                <td>
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10~100</td>
+                                <td>2</td>
+                                <td>
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10~100</td>
+                                <td>2</td>
+                                <td>
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10~100</td>
+                                <td>2</td>
+                                <td>
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10~100</td>
+                                <td>2</td>
+                                <td>
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10~100</td>
+                                <td>2</td>
+                                <td>
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10~100</td>
+                                <td>2</td>
+                                <td>
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div role="tabpanel" id="exchange" class="tab-pane">
+                    <!--兑换中心菜单-->
+                    <ul class="nav nav-pills" id="right_nav_exchange">
+                        <li role="presentation" class="active"><a href="#">全部物品</a></li>
+                        <li role="presentation"><a href="#">可兑换的</a></li>
+                        <li role="presentation"><a href="#">已兑换的</a></li>
+                        <li role="presentation"><a href="#">帮助</a></li>
+                    </ul>
+                    <!--兑换中心详细-->
+                    <div class="table-responsive row right_det_contair" id="right_contair_exchange">
+                        <div class="col-lg-4 col-sm-6 col-md-6">
+                            <div class="thumbnail">
+                                <img src="..." alt="物品">
+                                <div class="caption">
+                                    <h3>xxxxxxxxx</h3>
+                                    <p>兑换积分：100</p>
+                                    <a href="#" class="btn btn-primary" role="button">兑换</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-md-6">
+                            <div class="thumbnail">
+                                <img src="..." alt="物品">
+                                <div class="caption">
+                                    <h3>xxxxxxxxx</h3>
+                                    <p>兑换积分：100</p>
+                                    <a href="#" class="btn btn-primary disabled" role="button">兑换</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-md-6">
+                            <div class="thumbnail">
+                                <img src="..." alt="物品">
+                                <div class="caption">
+                                    <h3>xxxxxxxxx</h3>
+                                    <p>兑换积分：100</p>
+                                    <a href="#" class="btn btn-primary" role="button">兑换</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-md-6">
+                            <div class="thumbnail">
+                                <img src="..." alt="物品">
+                                <div class="caption">
+                                    <h3>xxxxxxxxx</h3>
+                                    <p>兑换积分：100</p>
+                                    <a href="#" class="btn btn-primary" role="button">兑换</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 col-md-6">
+                            <div class="thumbnail">
+                                <img src="..." alt="物品">
+                                <div class="caption">
+                                    <h3>xxxxxxxxx</h3>
+                                    <p>兑换积分：100</p>
+                                    <a href="#" class="btn btn-primary" role="button">兑换</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--已兑换-->
+                    <div class="table-responsive right_det_contair" id="right_contair_have">
+                        <div class="alert alert-success" role="alert">
+                            <img src="#" alt="物品"/>
+                            <span>xxxxxxxxx</span>
+                            <span>所需积分：100</span>
+                            <span>兑换时间：2015.5.10</span>
+                        </div>
+                        <div class="alert alert-success" role="alert">
+                            <img src="#" alt="物品"/>
+                            <span>xxxxxxxxx</span>
+                            <span>所需积分：100</span>
+                            <span>兑换时间：2015.5.10</span>
+                        </div>
+                        <div class="alert alert-success" role="alert">
+                            <img src="#" alt="物品"/>
+                            <span>xxxxxxxxx</span>
+                            <span>所需积分：100</span>
+                            <span>兑换时间：2015.5.10</span>
+                        </div>
+                        <div class="alert alert-success" role="alert">
+                            <img src="#" alt="物品"/>
+                            <span>xxxxxxxxx</span>
+                            <span>所需积分：100</span>
+                            <span>兑换时间：2015.5.10</span>
+                        </div>
+                        <div class="alert alert-success" role="alert">
+                            <img src="#" alt="物品"/>
+                            <span>xxxxxxxxx</span>
+                            <span>所需积分：100</span>
+                            <span>兑换时间：2015.5.10</span>
+                        </div>
+                        <div class="alert alert-success" role="alert">
+                            <img src="#" alt="物品"/>
+                            <span>xxxxxxxxx</span>
+                            <span>所需积分：100</span>
+                            <span>兑换时间：2015.5.10</span>
+                        </div>
+                    </div>
+                    <!--帮助-->
+                    <div class="table-responsive right_det_contair" id="right_contair_help">
+                        <div class="alert alert-info" role="alert">这里是啥？</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="complete">
+            <div class="complete_bac"></div>
+            <form class="container-center form-horizontal font_fa" action="#" method="post">
+                <div class="alert complete_head text-center" role="alert">第一次登陆成功，请完善个人信息</div>
+                <div class="form-group h4">
+                    <label for="inputName" class="form_font control-label col-sm-4 col-md-4 col-lg-4">昵称：</label>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                        <input name="name" type="text" id="inputName" class="form-control " required autofocus>
+                    </div>
+                </div>
+                <div class="form-group h4">
+                    <label for="inputIntro" class="form_font control-label col-sm-4 col-md-4 col-lg-4">简介：</label>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                        <textarea  name="intro" class="form-control" id="inputIntro" placeholder="关于我..."></textarea>
+                    </div>
+                </div>
+                <div class="form-group h4">
+                    <label for="inputPass" class="form_font control-label col-sm-5 col-md-5 col-lg-5">修改密码：</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        <input name="password" type="password" id="inputPass" class="form-control ">
+                    </div>
+                </div>
+                <div class="form-group h4">
+                    <label for="inputPass_again" class="form_font control-label col-sm-5 col-md-5 col-lg-5">确认密码：</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        <input name="password_again" type="password" id="inputPass_again" class="form-control ">
+                    </div>
+                </div>
+                <div class="form-group clearfix">
+                    <div class="alert alert-info complete_head text-center complete_info" role="alert">若不修改密码，则为默认身份证后六位</div>
+                </div>
+                <div class="form-group h4">
+                    <label for="inputAsk" class="form_font control-label col-sm-5 col-md-5 col-lg-5">密保问题：</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        <input name="ask" type="text" id="inputAsk" class="form-control " required>
+                    </div>
+                </div>
+                <div class="form-group h4">
+                    <label for="inputAns" class="form_font control-label col-sm-5 col-md-5 col-lg-5">密保答案：</label>
+                    <div class="col-sm-7 col-md-7 col-lg-7">
+                        <input name="answer" type="text" id="inputAns" class="form-control " required>
+                    </div>
+                </div>
+                <div class="form-group clearfix">
+                    <div class="alert alert-info complete_head text-center complete_info" role="alert">密保问题便于您找回密码</div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary complete_sub" type="submit">确定</button>
+                </div>
+
+
+            </form>
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/form_check.js"></script>
+</html>

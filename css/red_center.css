@@ -1,0 +1,129 @@
+body {
+  padding-top: 100px;
+}
+.font_fa {
+  font-family: Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+.nav_user {
+  margin-top: 17px;
+}
+.nav_out {
+  margin-right: 36px;
+  margin-left: 26px;
+}
+.left_face {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  margin-top: 30px;
+}
+#intro {
+  height: 80px;
+  resize: none;
+}
+.form_font {
+  font-weight: normal;
+}
+.con_border {
+  border: 1px solid #ddd;
+  -moz-border-radius: 4px;
+  /* Gecko browsers */
+  -webkit-border-radius: 4px;
+  /* Webkit browsers */
+  border-radius: 4px;
+  /* W3C syntax */
+}
+.right_det {
+  border-top: transparent;
+  padding-top: 15px;
+  height: 747px;
+}
+.left_table {
+  margin-top: 10px;
+  text-align: center;
+}
+#right_nav_rule {
+  padding-right: 0;
+}
+#right_nav_center {
+  padding-right: 0;
+}
+#right_nav_exchange {
+  margin-bottom: 15px;
+}
+.right_det_contair {
+  height: 720px;
+  padding-right: 0;
+}
+#right_contair_rule {
+  margin-bottom: 15px;
+}
+#right_contair_rule table {
+  margin-bottom: 0;
+}
+#right_contair_exchange {
+  height: 661px;
+}
+#right_contair_exchange img {
+  width: 100%;
+}
+#right_contair_exchange a {
+  width: 75px;
+}
+#right_contair_have {
+  height: 661px;
+  display: none;
+}
+#right_contair_have img {
+  height: 100px;
+  width: 100px;
+}
+#right_contair_have span {
+  font-size: 16px;
+  margin-left: 40px;
+}
+#right_contair_help {
+  height: 661px;
+  display: none;
+}
+.complete {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: none;
+}
+.complete form {
+  width: 400px;
+  margin: 50px auto 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.complete_bac {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #eee;
+  opacity: 0.8;
+  filter: alpha(opacity=0.8);
+}
+.complete_head {
+  font-size: 16px;
+}
+#inputIntro {
+  height: 80px;
+  resize: none;
+}
+.complete_info {
+  float: left;
+  margin-left: 74px;
+  margin-bottom: 0;
+  padding: 4px 10px;
+}
+.complete_sub {
+  width: 150px;
+  margin-left: 172px;
+}

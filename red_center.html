@@ -122,16 +122,16 @@
             <div class="container-fluid con_border row right_det tab-content">
                 <div role="tabpanel" id="center" class="tab-pane active">
                     <!--我的中心菜单-->
-                    <ul class="nav nav-pills nav-stacked col-lg-3 col-md-4 col-sm-4 con_border" id="right_nav_center">
-                        <li role="presentation" class="active text-center btn-sm"><a href="#">所有动态<span class="badge">4</span></a></li>
-                        <li role="presentation" class="text-center btn-sm"><a href="#">BTdown铺<span class="badge">4</span></a></li>
-                        <li role="presentation" class="text-center btn-sm"><a href="#">拾货<span class="badge">4</span></a></li>
-                        <li role="presentation" class="text-center btn-sm"><a href="#">锦瑟南山<span class="badge">4</span></a></li>
-                        <li role="presentation" class="text-center btn-sm"><a href="#">掌上重邮<span class="badge">4</span></a></li>
-                        <li role="presentation" class="text-center btn-sm"><a href="#">重邮小帮手<span class="badge">4</span></a></li>
+                    <ul class="nav-tabs nav nav-pills nav-stacked col-lg-3 col-md-4 col-sm-4 con_border" id="right_nav_center" role="tablist">
+                        <li role="presentation" class="active text-center btn-sm"><a href="#right_contair_center"  aria-controls="right_contair_center" role="tab" data-toggle="tab">所有动态<span class="badge">4</span></a></li>
+                        <li role="presentation" class="text-center btn-sm"><a href="#right_contair_center"  aria-controls="right_contair_center" role="tab" data-toggle="tab">BTdown铺<span class="badge">4</span></a></li>
+                        <li role="presentation" class="text-center btn-sm"><a href="#right_contair_center"  aria-controls="right_contair_center" role="tab" data-toggle="tab">拾货<span class="badge">4</span></a></li>
+                        <li role="presentation" class="text-center btn-sm"><a href="#right_contair_center"  aria-controls="right_contair_center" role="tab" data-toggle="tab">锦瑟南山<span class="badge">4</span></a></li>
+                        <li role="presentation" class="text-center btn-sm"><a href="#right_contair_center"  aria-controls="right_contair_center" role="tab" data-toggle="tab">掌上重邮<span class="badge">4</span></a></li>
+                        <li role="presentation" class="text-center btn-sm"><a href="#right_contair_center"  aria-controls="right_contair_center" role="tab" data-toggle="tab">重邮小帮手<span class="badge">4</span></a></li>
                     </ul>
                     <!--我的中心详细-->
-                    <div class="table-responsive right_det_contair col-lg-9 col-md-8 col-sm-8" id="right_contair_center">
+                    <div role="tabpanel" class="tab-pane table-responsive right_det_contair col-lg-9 col-md-8 col-sm-8" id="right_contair_center">
                         <div class="alert alert-success" role="alert">mio 在重邮小帮手 查看课表，积分+1</div>
                         <div class="alert alert-success" role="alert">mio 在BTdown铺 上传种子，积分+1</div>
                         <div class="alert alert-danger" role="alert">mio 在BTdown铺 xxxxxx，积分-11111111111111111111111111111111111111111111111111111</div>
@@ -148,121 +148,224 @@
                 </div>
                 <div role="tabpanel" id="rule" class="tab-pane">
                     <!--积分细则菜单-->
-                    <ul role="tabpanel" class="tab-pane nav nav-pills nav-stacked col-lg-3 col-md-3 col-sm-3 con_border" id="right_nav_rule">
-                        <li role="presentation" class="text-center btn-sm active"><a href="#">BTdown铺</a></li>
-                        <li role="presentation" class="text-center btn-sm"><a href="#">拾货</a></li>
-                        <li role="presentation" class="text-center btn-sm"><a href="#">锦瑟南山</a></li>
-                        <li role="presentation" class="text-center btn-sm"><a href="#">掌上重邮</a></li>
-                        <li role="presentation" class="text-center btn-sm"><a href="#">重邮小帮手</a></li>
+                    <ul class="tab-pane nav nav-tabs nav-pills nav-stacked col-lg-3 col-md-3 col-sm-3 con_border" id="right_nav_rule"  role="tablist">
+                        <li role="presentation" class="text-center btn-sm active"><a href="#right_contair_rule_bt" aria-controls="right_contair_rule_bt" role="tab" data-toggle="tab">BTdown铺</a></li>
+                        <li role="presentation" class="text-center btn-sm"><a href="#right_contair_rule_sell" aria-controls="right_contair_rule_sell" role="tab" data-toggle="tab">拾货</a></li>
+                        <li role="presentation" class="text-center btn-sm"><a href="#right_contair_rule_jsns" aria-controls="right_contair_rule_jsns" role="tab" data-toggle="tab">锦瑟南山</a></li>
+                        <li role="presentation" class="text-center btn-sm"><a href="#right_contair_rule_cqupt" aria-controls="right_contair_rule_cqupt" role="tab" data-toggle="tab">掌上重邮</a></li>
+                        <li role="presentation" class="text-center btn-sm"><a href="#right_contair_rule_helper" aria-controls="right_contair_rule_helper" role="tab" data-toggle="tab">重邮小帮手</a></li>
                     </ul>
                     <!--积分细则表-->
-                    <div class="table-responsive right_det_contair col-lg-9 col-md-9 col-sm-9" id="right_contair_rule">
-                        <table class="table table-hover con_border text-center">
-                            <thead>
-                            <tr>
-                                <th class="text-center">用户行为</th>
-                                <th class="text-center">积分加减</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>xxxxxx</td>
-                                <td>+1</td>
-                            </tr>
-                            <tr>
-                                <td>xxxxx</td>
-                                <td>+1</td>
-                            </tr>
-                            <tr>
-                                <td>xxxxx</td>
-                                <td>+1</td>
-                            </tr>
-                            <tr>
-                                <td>xxxxx</td>
-                                <td>+1</td>
-                            </tr>
-                            <tr>
-                                <td>xxxxx</td>
-                                <td>+1</td>
-                            </tr>
-                            <tr>
-                                <td>xxxxx</td>
-                                <td>+1</td>
-                            </tr>
-                            <tr>
-                                <td>xxxxx</td>
-                                <td>+1</td>
-                            </tr>
-                            <tr>
-                                <td>xxxxx</td>
-                                <td>+1</td>
-                            </tr>
-                            <tr>
-                                <td>xxxxx</td>
-                                <td>+1</td>
-                            </tr>
-                            <tr>
-                                <td>xxxxx</td>
-                                <td>+1</td>
-                            </tr>
-                            <tr>
-                                <td>xxxxx</td>
-                                <td>+1</td>
-                            </tr>
-                            <tr>
-                                <td>xxxxx</td>
-                                <td>+1</td>
-                            </tr>
-                            <tr>
-                                <td>xxxxx</td>
-                                <td>+1</td>
-                            </tr>
-                            <tr>
-                                <td>xxxxx</td>
-                                <td>+1</td>
-                            </tr>
-                            <tr>
-                                <td>xxxxx</td>
-                                <td>+1</td>
-                            </tr>
-                            <tr>
-                                <td>xxxxx</td>
-                                <td>+1</td>
-                            </tr>
-                            <tr>
-                                <td>xxxxx</td>
-                                <td>+1</td>
-                            </tr>
-                            <tr>
-                                <td>xxxxx</td>
-                                <td>+1</td>
-                            </tr>
-                            <tr>
-                                <td>xxxxx</td>
-                                <td>+1</td>
-                            </tr>
-                            <tr>
-                                <td>xxxxx</td>
-                                <td>+1</td>
-                            </tr>
-                            <tr>
-                                <td>xxxxx</td>
-                                <td>+1</td>
-                            </tr>
-                            <tr>
-                                <td>xxxxx</td>
-                                <td>+1</td>
-                            </tr>
-                            <tr>
-                                <td>xxxxx</td>
-                                <td>+1</td>
-                            </tr>
-                            <tr>
-                                <td>xxxxx</td>
-                                <td>+1</td>
-                            </tr>
-                            </tbody>
-                        </table>
+                    <div class="tab-content table-responsive right_det_contair col-lg-9 col-md-9 col-sm-9" id="right_contair_rule">
+                        <!--btdown铺-->
+                        <div  role="tabpanel" class="tab-pane active" id="right_contair_rule_bt">
+                            <table class="table table-hover con_border text-center">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">用户行为</th>
+                                    <th class="text-center">积分加减</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>xxxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--拾货-->
+                        <div  role="tabpanel" class="tab-pane" id="right_contair_rule_sell">
+                            <table class="table table-hover con_border text-center">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">用户行为</th>
+                                    <th class="text-center">积分加减</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>xxxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--锦瑟南山-->
+                        <div  role="tabpanel" class="tab-pane" id="right_contair_rule_jsns">
+                            <table class="table table-hover con_border text-center">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">用户行为</th>
+                                    <th class="text-center">积分加减</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>xxxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--掌上重邮-->
+                        <div  role="tabpanel" class="tab-pane" id="right_contair_rule_cqupt">
+                            <table class="table table-hover con_border text-center">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">用户行为</th>
+                                    <th class="text-center">积分加减</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>xxxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--重邮小帮手-->
+                        <div  role="tabpanel" class="tab-pane" id="right_contair_rule_helper">
+                            <table class="table table-hover con_border text-center">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">用户行为</th>
+                                    <th class="text-center">积分加减</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>xxxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                <tr>
+                                    <td>xxxxx</td>
+                                    <td>+1</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 <div role="tabpanel" id="level" class="tab-pane">
@@ -352,108 +455,111 @@
                 </div>
                 <div role="tabpanel" id="exchange" class="tab-pane">
                     <!--兑换中心菜单-->
-                    <ul class="nav nav-pills" id="right_nav_exchange">
-                        <li role="presentation" class="active"><a href="#">全部物品</a></li>
-                        <li role="presentation"><a href="#">可兑换的</a></li>
-                        <li role="presentation"><a href="#">已兑换的</a></li>
-                        <li role="presentation"><a href="#">帮助</a></li>
+                    <ul role="tablist" class="nav nav-tabs nav-pills" id="right_nav_exchange">
+                        <li role="presentation" class="active"><a href="#right_contair_exchange" aria-controls="right_contair_exchange" role="tab" data-toggle="tab">全部物品</a></li>
+                        <li role="presentation"><a href="#right_contair_exchange" aria-controls="right_contair_exchange" role="tab" data-toggle="tab">可兑换的</a></li>
+                        <li role="presentation"><a href="#right_contair_have" aria-controls="right_contair_have" role="tab" data-toggle="tab">已兑换的</a></li>
+                        <li role="presentation"><a href="#right_contair_help" aria-controls="right_contair_help" role="tab" data-toggle="tab">帮助</a></li>
                     </ul>
-                    <!--兑换中心详细-->
-                    <div class="table-responsive row right_det_contair" id="right_contair_exchange">
-                        <div class="col-lg-4 col-sm-6 col-md-6">
-                            <div class="thumbnail">
-                                <img src="..." alt="物品">
-                                <div class="caption">
-                                    <h3>xxxxxxxxx</h3>
-                                    <p>兑换积分：100</p>
-                                    <a href="#" class="btn btn-primary" role="button">兑换</a>
+                    <div class="tab-content">
+                        <!--兑换中心详细-->
+                        <div role="tabpanel" class="tab-pane table-responsive row right_det_contair active" id="right_contair_exchange">
+                            <div class="col-lg-4 col-sm-6 col-md-6">
+                                <div class="thumbnail">
+                                    <img src="..." alt="物品">
+                                    <div class="caption">
+                                        <h3>xxxxxxxxx</h3>
+                                        <p>兑换积分：100</p>
+                                        <a href="#" class="btn btn-primary" role="button">兑换</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 col-md-6">
+                                <div class="thumbnail">
+                                    <img src="..." alt="物品">
+                                    <div class="caption">
+                                        <h3>xxxxxxxxx</h3>
+                                        <p>兑换积分：100</p>
+                                        <a href="#" class="btn btn-primary disabled" role="button">兑换</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 col-md-6">
+                                <div class="thumbnail">
+                                    <img src="..." alt="物品">
+                                    <div class="caption">
+                                        <h3>xxxxxxxxx</h3>
+                                        <p>兑换积分：100</p>
+                                        <a href="#" class="btn btn-primary" role="button">兑换</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 col-md-6">
+                                <div class="thumbnail">
+                                    <img src="..." alt="物品">
+                                    <div class="caption">
+                                        <h3>xxxxxxxxx</h3>
+                                        <p>兑换积分：100</p>
+                                        <a href="#" class="btn btn-primary" role="button">兑换</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6 col-md-6">
+                                <div class="thumbnail">
+                                    <img src="..." alt="物品">
+                                    <div class="caption">
+                                        <h3>xxxxxxxxx</h3>
+                                        <p>兑换积分：100</p>
+                                        <a href="#" class="btn btn-primary" role="button">兑换</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-sm-6 col-md-6">
-                            <div class="thumbnail">
-                                <img src="..." alt="物品">
-                                <div class="caption">
-                                    <h3>xxxxxxxxx</h3>
-                                    <p>兑换积分：100</p>
-                                    <a href="#" class="btn btn-primary disabled" role="button">兑换</a>
-                                </div>
+                        <!--已兑换-->
+                        <div role="tabpanel" class="tab-pane table-responsive right_det_contair" id="right_contair_have">
+                            <div class="alert alert-success" role="alert">
+                                <img src="#" alt="物品"/>
+                                <span>xxxxxxxxx</span>
+                                <span>所需积分：100</span>
+                                <span>兑换时间：2015.5.10</span>
+                            </div>
+                            <div class="alert alert-success" role="alert">
+                                <img src="#" alt="物品"/>
+                                <span>xxxxxxxxx</span>
+                                <span>所需积分：100</span>
+                                <span>兑换时间：2015.5.10</span>
+                            </div>
+                            <div class="alert alert-success" role="alert">
+                                <img src="#" alt="物品"/>
+                                <span>xxxxxxxxx</span>
+                                <span>所需积分：100</span>
+                                <span>兑换时间：2015.5.10</span>
+                            </div>
+                            <div class="alert alert-success" role="alert">
+                                <img src="#" alt="物品"/>
+                                <span>xxxxxxxxx</span>
+                                <span>所需积分：100</span>
+                                <span>兑换时间：2015.5.10</span>
+                            </div>
+                            <div class="alert alert-success" role="alert">
+                                <img src="#" alt="物品"/>
+                                <span>xxxxxxxxx</span>
+                                <span>所需积分：100</span>
+                                <span>兑换时间：2015.5.10</span>
+                            </div>
+                            <div class="alert alert-success" role="alert">
+                                <img src="#" alt="物品"/>
+                                <span>xxxxxxxxx</span>
+                                <span>所需积分：100</span>
+                                <span>兑换时间：2015.5.10</span>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-sm-6 col-md-6">
-                            <div class="thumbnail">
-                                <img src="..." alt="物品">
-                                <div class="caption">
-                                    <h3>xxxxxxxxx</h3>
-                                    <p>兑换积分：100</p>
-                                    <a href="#" class="btn btn-primary" role="button">兑换</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 col-md-6">
-                            <div class="thumbnail">
-                                <img src="..." alt="物品">
-                                <div class="caption">
-                                    <h3>xxxxxxxxx</h3>
-                                    <p>兑换积分：100</p>
-                                    <a href="#" class="btn btn-primary" role="button">兑换</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6 col-md-6">
-                            <div class="thumbnail">
-                                <img src="..." alt="物品">
-                                <div class="caption">
-                                    <h3>xxxxxxxxx</h3>
-                                    <p>兑换积分：100</p>
-                                    <a href="#" class="btn btn-primary" role="button">兑换</a>
-                                </div>
-                            </div>
+                        <!--帮助-->
+                        <div role="tabpanel" class="tab-pane table-responsive right_det_contair" id="right_contair_help">
+                            <div class="alert alert-info" role="alert">这里是啥？</div>
                         </div>
                     </div>
-                    <!--已兑换-->
-                    <div class="table-responsive right_det_contair" id="right_contair_have">
-                        <div class="alert alert-success" role="alert">
-                            <img src="#" alt="物品"/>
-                            <span>xxxxxxxxx</span>
-                            <span>所需积分：100</span>
-                            <span>兑换时间：2015.5.10</span>
-                        </div>
-                        <div class="alert alert-success" role="alert">
-                            <img src="#" alt="物品"/>
-                            <span>xxxxxxxxx</span>
-                            <span>所需积分：100</span>
-                            <span>兑换时间：2015.5.10</span>
-                        </div>
-                        <div class="alert alert-success" role="alert">
-                            <img src="#" alt="物品"/>
-                            <span>xxxxxxxxx</span>
-                            <span>所需积分：100</span>
-                            <span>兑换时间：2015.5.10</span>
-                        </div>
-                        <div class="alert alert-success" role="alert">
-                            <img src="#" alt="物品"/>
-                            <span>xxxxxxxxx</span>
-                            <span>所需积分：100</span>
-                            <span>兑换时间：2015.5.10</span>
-                        </div>
-                        <div class="alert alert-success" role="alert">
-                            <img src="#" alt="物品"/>
-                            <span>xxxxxxxxx</span>
-                            <span>所需积分：100</span>
-                            <span>兑换时间：2015.5.10</span>
-                        </div>
-                        <div class="alert alert-success" role="alert">
-                            <img src="#" alt="物品"/>
-                            <span>xxxxxxxxx</span>
-                            <span>所需积分：100</span>
-                            <span>兑换时间：2015.5.10</span>
-                        </div>
-                    </div>
-                    <!--帮助-->
-                    <div class="table-responsive right_det_contair" id="right_contair_help">
-                        <div class="alert alert-info" role="alert">这里是啥？</div>
-                    </div>
+
                 </div>
 
             </div>

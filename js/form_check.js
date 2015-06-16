@@ -61,6 +61,7 @@ var form_check = (function(){
             $.each(check,function(index,fun){
                 if(!fun()){
                     is_checked = false;
+//                    alert(1);
                     return false;
                 }
             });

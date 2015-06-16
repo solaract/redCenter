@@ -151,7 +151,7 @@ body { padding-top: 100px; }
     width: 400px;
     .center(50px);
     position: relative;
-    z-index: 2;
+    z-index: 3;
   }
   display: none;
 }
@@ -263,3 +263,97 @@ footer .renren{
   padding-top: 20px;
 }
 //footer end
+
+
+
+//裁剪
+.popover{
+  max-width: 100%;
+  z-index: 2;
+}
+#up_form{
+//  width: 260px;
+  padding: 10px;
+  .center();
+//  position: relative;
+  .up_content{
+    .up_box{
+      position: relative;
+      margin-bottom: 20px;
+      overflow: hidden;
+      &:hover{
+//        cursor: pointer;
+        .up_button{
+          background: #286090;
+        }
+      }
+//      &:active{
+//        .up_button{
+//          background: #1788df;
+//        }
+//
+//      }
+      #up_txt{
+        float: left;
+        width: 190px;
+        height: 34px;
+        border: 1px solid #dedede;
+        border-radius: 4px;
+        margin-right: 25px;
+        .box_shadow(0,1px,#d9e6ed);
+        .ellipsis()
+      }
+//      .up_button{
+//        float: left;
+//        width: 100px;
+//        height: 30px;
+//        font-size: 18px;
+//        text-align: center;
+//        .border_radius();
+//        color: #ffffff;
+//        .change_color(#1ea3e6,#1788df);
+//        background-color: #1b97e3;
+//        margin-right: 20px;
+//        .box_shadow(0,1px,#d9e6ed);
+//      }
+      #up_file{
+        position: absolute;
+        left: 0;
+        top:0;
+        .opacity(0);
+//        width: 327px;
+        width: 100%;
+        height: 34px;
+        &:hover{
+          cursor: pointer;
+        }
+//        &:hover .up_button{
+//          background-color: #286090;
+//        }
+
+      }
+    }
+
+//    .up_submit{
+//      display: block;
+//      float: left;
+//      width: 100px;
+//      height: 30px;
+//      font-size: 18px;
+//      text-align: center;
+//      .border_radius();
+//      color: #ffffff;
+//      .change_color(#1ea3e6,#1788df);
+//      background-color: #1b97e3;
+//      border: 0;
+//      padding: 0;
+//      .box_shadow(0,1px,#d9e6ed);
+//      &:hover{
+//        background: #1ea3e6;
+//      }
+//      &:active{
+//        background: #1788df;
+//      }
+//    }
+  }
+}

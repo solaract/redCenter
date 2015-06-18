@@ -3,6 +3,7 @@
  */
 var $user = $('#inputUser');
 var $pass = $('#inputPassword');
+//输入提示
 $user.tooltip({title:'学号',trigger:'focus'});
 $user.tooltip('show');
 $pass.tooltip({title:'ucenter/重邮通行证/身份证后六位',trigger:'focus'});

@@ -7,6 +7,11 @@ body {
 .font_fa {
   font-family: Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
+.nav_con_shadow {
+  -webkit-box-shadow: 0 2px 1px 1px #dddddd;
+  -moz-box-shadow: 0 2px 1px 1px #dddddd;
+  box-shadow: 0 2px 1px 1px #dddddd;
+}
 .nav_user {
   margin-top: 17px;
 }

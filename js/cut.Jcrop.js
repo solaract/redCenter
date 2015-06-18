@@ -3,6 +3,7 @@ var face = $('.left_face');
 
 //点击头像弹出侧栏
 face.popover({
+    title:'自定义头像',
     trigger:'click',
     template:'<div class="popover font_fa" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div id="cut"><form id="up_form" action="#" enctype="multipart/form-data" method="post"><p>选择图片（支持jpg、png、gif）</p><div class="up_content"><div class="up_box"><div id="up_txt"></div><button class="up_button btn btn-primary">浏览..</button><input id="up_file" name="file" type="file" accept="image/*"></div><input class="btn btn-primary" type="submit" value="下一步"></div></form></div></div>'
 //<form id="up_form" action="#" enctype="multipart/form-data" method="post"><div class="up_content"><div class="up_box"><div id="up_txt"></div><div class="up_button">浏览..</div><input id="up_file" name="file" type="file"></div><input class="up_submit" type="submit" value="上传"></div></form>
@@ -154,7 +155,7 @@ var cut_img = function(){
       minSize:[100,100],
       boxWidth:300,
       bgColor:'rgb(129,129,129)',
-      allowSelect:false,
+//      allowSelect:false,
       onChange: updatePreview,
       onSelect: updateCoords,
       aspectRatio: 1

@@ -25,13 +25,13 @@
           <div class="form-group h4">
               <label for="inputUser" class="form_font control-label col-md-3 col-lg-3 col-sm-3 col-xs-3">账号：</label>
               <div class="col-md-9 col-lg-9 col-sm-9 col-xs-9">
-                  <input name="user" type="text" id="inputUser" class="form-control" placeholder="学号" required autofocus>
+                  <input name="user" type="text" id="inputUser" class="form-control" autofocus>
               </div>
           </div>
           <div class="form-group h4">
               <label for="inputPassword" class="form_font control-label col-md-3 col-lg-3 col-sm-3 col-xs-3">密码：</label>
               <div class="col-md-9 col-lg-9 col-sm-9 col-xs-9">
-                  <input name="password" type="password" id="inputPassword" class="form-control" placeholder="ucenter/重邮通行证/身份证后六位" required autofocus>
+                  <input name="password" type="password" id="inputPassword" class="form-control">
               </div>
           </div>
 
@@ -39,53 +39,12 @@
           <label class="form_remember">
             <input type="checkbox" value="remember"> 记住密码
           </label>
-          <a class="form_forget">忘记密码?</a>
+          <a href="#" class="form_forget">忘记密码?</a>
         </div>
 
         <button class="btn btn-lg btn-primary form_sub center-block" type="submit">登陆</button>
       </form>
-    <div class="complete">
-        <div class="complete_bac"></div>
-        <form id="form_ask" class="container-center form-horizontal font_fa" action="#" method="post">
-            <div class="alert complete_head text-center" role="alert">如修改过密码，请验证密保问题修改密码</div>
-            <div class="form-group h4">
-                <label for="inputAsk" class="form_font control-label col-md-5 col-lg-5 col-sm-5 col-xs-5">密保问题：</label>
-                <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                    <!--<input name="ask" type="text" id="inputAsk" class="form-control " required>-->
-                    <p class="form-control" id="inputAsk" disabled>密保问题</p>
-                </div>
-            </div>
-            <div class="form-group h4">
-                <label for="inputAns" class="form_font control-label col-md-5 col-lg-5 col-sm-5 col-xs-5">密保答案：</label>
-                <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                    <input name="answer" type="text" id="inputAns" class="form-control ">
-                </div>
-            </div>
-            <div class="form-group">
-                <button class="btn btn-lg btn-primary col-lg-6 col-md-6 col-sm-6 col-lg-offset-2 col-md-offset-2 col-sm-offset-2" type="submit">确定</button>
-                <button class="btn btn-lg btn-primary col-lg-3 col-md-3 col-sm-3 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 btn-warning comp_close" type="submit">取消</button>
-            </div>
-        </form>
-        <form id="form_change" class="container-center form-horizontal font_fa" action="#" method="post">
-            <div class="alert complete_head text-center" role="alert">如修改过密码，请验证密保问题修改密码</div>
-            <div class="form-group h4">
-                <label for="inputPass" class="form_font control-label col-md-5 col-lg-5 col-sm-5 col-xs-5">新密码：</label>
-                <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                    <input name="password" type="text" id="inputPass" class="form-control ">
-                </div>
-            </div>
-            <div class="form-group h4">
-                <label for="inputPass_again" class="form_font control-label col-md-5 col-lg-5 col-sm-5 col-xs-5">确认密码：</label>
-                <div class="col-md-7 col-lg-7 col-sm-7 col-xs-7">
-                    <input name="password_again" type="text" id="inputPass_again" class="form-control ">
-                </div>
-            </div>
-            <div class="form-group">
-                <button class="btn btn-lg btn-primary col-lg-6 col-md-6 col-sm-6 col-lg-offset-2 col-md-offset-2 col-sm-offset-2" type="submit">确定</button>
-                <button class="btn btn-lg btn-primary col-lg-3 col-md-3 col-sm-3 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 btn-warning comp_close" type="submit">取消</button>
-            </div>
-        </form>
-    </div>
+
 
 
   </body>

@@ -569,28 +569,28 @@
     </div>
     <div class="complete">
             <div class="complete_bac"></div>
-            <form class="container-center form-horizontal font_fa" action="#" method="post">
-                <div class="alert complete_head text-center" role="alert">第一次登陆成功，请完善个人信息</div>
+            <form id="comp_form" class="container-center font_fa" action="#" method="post">
+                <div class="alert complete_head text-center" role="alert">第一次登陆成功，请完善个人信息（<span class="comp_sp"> *</span> 为必填）</div>
                 <div class="form-group h4">
-                    <label for="inputName" class="form_font control-label col-sm-4 col-md-4 col-lg-4">昵称：</label>
+                    <label for="inputName" class="form_font comp_label control-label col-sm-4 col-md-4 col-lg-4">昵称：</label>
                     <div class="col-sm-8 col-md-8 col-lg-8">
-                        <input name="name" type="text" id="inputName" class="form-control " required autofocus>
+                        <input name="name" type="text" id="inputName" class="form-control " autofocus>
                     </div>
                 </div>
                 <div class="form-group h4">
-                    <label for="inputIntro" class="form_font control-label col-sm-4 col-md-4 col-lg-4">简介：</label>
+                    <label for="inputIntro" class="form_font comp_label control-label col-sm-4 col-md-4 col-lg-4">简介：</label>
                     <div class="col-sm-8 col-md-8 col-lg-8">
                         <textarea  name="intro" class="form-control" id="inputIntro" placeholder="关于我..."></textarea>
                     </div>
                 </div>
                 <div class="form-group h4">
-                    <label for="inputPass" class="form_font control-label col-sm-5 col-md-5 col-lg-5">修改密码：</label>
+                    <label for="inputPass" class="form_font comp_label control-label col-sm-5 col-md-5 col-lg-5">修改密码：</label>
                     <div class="col-sm-7 col-md-7 col-lg-7">
                         <input name="password" type="password" id="inputPass" class="form-control ">
                     </div>
                 </div>
                 <div class="form-group h4">
-                    <label for="inputPass_again" class="form_font control-label col-sm-5 col-md-5 col-lg-5">确认密码：</label>
+                    <label for="inputPass_again" class="form_font comp_label control-label col-sm-5 col-md-5 col-lg-5">确认密码：</label>
                     <div class="col-sm-7 col-md-7 col-lg-7">
                         <input name="password_again" type="password" id="inputPass_again" class="form-control ">
                     </div>
@@ -599,15 +599,15 @@
                     <div class="alert alert-info complete_head text-center complete_info" role="alert">若不修改密码，则为默认身份证后六位</div>
                 </div>
                 <div class="form-group h4">
-                    <label for="inputAsk" class="form_font control-label col-sm-5 col-md-5 col-lg-5">密保问题：</label>
+                    <label for="inputAsk" class="form_font comp_label control-label col-sm-5 col-md-5 col-lg-5">密保问题<span class="comp_sp"> *</span>：</label>
                     <div class="col-sm-7 col-md-7 col-lg-7">
-                        <input name="ask" type="text" id="inputAsk" class="form-control " required>
+                        <input name="ask" type="text" id="inputAsk" class="form-control ">
                     </div>
                 </div>
                 <div class="form-group h4">
-                    <label for="inputAns" class="form_font control-label col-sm-5 col-md-5 col-lg-5">密保答案：</label>
+                    <label for="inputAns" class="form_font comp_label control-label col-sm-5 col-md-5 col-lg-5">密保答案<span class="comp_sp"> *</span>：</label>
                     <div class="col-sm-7 col-md-7 col-lg-7">
-                        <input name="answer" type="text" id="inputAns" class="form-control " required>
+                        <input name="answer" type="text" id="inputAns" class="form-control ">
                     </div>
                 </div>
                 <div class="form-group clearfix">

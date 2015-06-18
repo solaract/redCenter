@@ -80,3 +80,22 @@ var det_check = new form_check({
     }]
 });
 det_check.run();
+//完善信息表单验证
+var comp_check = new form_check({
+    form:'#comp_form',
+    check:[function(){
+//        return false;
+        var $ask = $('#inputAsk');
+        var $ans = $('#inputAns');
+        if($ask.val() === ''){
+            $ask.focus();
+            return false;
+        }
+        else if($ans.val() === ''){
+            $ans.focus();
+            return false;
+        }
+        return true;
+    }]
+});
+comp_check.run();

@@ -45,8 +45,17 @@ body { padding-top: 100px; }
 .alert{
   word-wrap: break-word;
 }
+.form-group{
+  overflow: hidden;
+}
+.comp_label{
+  line-height: 30px;
+}
 .font_fa{
   .font_family();
+}
+.navbar-fixed-top{
+  z-index: 2;
 }
 .nav_con_shadow{
   .box_shadow(0,2px,#ddd);
@@ -153,13 +162,14 @@ body { padding-top: 100px; }
   position: fixed;
   top: 0;
   right: 0;
+  z-index: 3;
   form{
     width: 400px;
     .center(50px);
     position: relative;
     z-index: 3;
   }
-  display: none;
+//  display: none;
 }
 .complete_bac{
   width: 100%;
@@ -180,16 +190,22 @@ body { padding-top: 100px; }
   height: 80px;
   resize: none;
 }
+.comp_sp{
+  color: red;
+}
 .complete_info{
 //  width: 315px;
-  float: left;
-  margin-left: 74px;
+//  float: left;
+  margin-right: 15px;
+  float: right;
   margin-bottom: 0;
   padding: 4px 10px;
 }
 .complete_sub{
   width: 150px;
-  margin-left: 172px;
+//  margin-left: 172px;
+  display: block;
+  .center();
 }
 
 

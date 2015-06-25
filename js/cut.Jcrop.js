@@ -1,32 +1,109 @@
-// jQuery(function($){
+jQuery(function($){
 var face = $('.left_face');
-
+var $face_img = $('.left_face img');
+var jcrop_api;
+var boundx,boundy;
 //点击头像弹出侧栏
 face.popover({
     title:'自定义头像',
     trigger:'click',
-    template:'<div class="popover font_fa" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div id="cut"><form id="up_form" action="#" enctype="multipart/form-data" method="post"><p>选择图片（支持jpg、png、gif）</p><div class="up_content"><div class="up_box"><div id="up_txt"></div><button class="up_button btn btn-primary">浏览..</button><input id="up_file" name="file" type="file" accept="image/*"></div><input class="btn btn-primary" type="submit" value="下一步"></div></form></div></div>'
+    template:'<div class="popover font_fa" role="tooltip">' +
+        '<div class="arrow"></div>' +
+        '<h3 class="popover-title"></h3>' +
+        '<div id="cut">' +
+        '<form id="up_form" action="#" enctype="multipart/form-data" method="post">' +
+            '<p>选择图片（支持jpg、png、gif）</p>' +
+            '<div class="up_content">' +
+                '<div class="up_box">' +
+                    '<div id="up_txt"></div>' +
+                    '<button class="up_button btn btn-primary">浏览..</button>' +
+                    '<input id="up_file" name="file" type="file" accept="image/*">' +
+                '</div>' +
+                '<input class="btn btn-primary up_next" type="button" value="下一步">' +
+            '</div>' +
+            '<div id="cut_face">'+
+            '<img id="target" alt="[Jcrop Example]" />'+
+            '<div id="preview-pane">'+
+            '<div class="preview-container">'+
+            '<img class="jcrop-preview" alt="Preview" />'+
+            '</div>'+
+            '</div>'+
+            '<div class="clearfix"></div>'+
+            '<input type="hidden" id="x" name="x">'+
+            '<input type="hidden" id="y" name="y">'+
+            '<input type="hidden" id="w" name="w">'+
+            '<input type="hidden" id="h" name="h">'+
+            '<input class="cxbtn btn btn-primary" type="submit" value="上传头像">'+
+            '<input class="cut_close btn btn-primary" type="button" value="上一步">'+
+            '</div>'+
+        '</form>' +
+        '</div>' +
+        '</div>'
 //<form id="up_form" action="#" enctype="multipart/form-data" method="post"><div class="up_content"><div class="up_box"><div id="up_txt"></div><div class="up_button">浏览..</div><input id="up_file" name="file" type="file"></div><input class="up_submit" type="submit" value="上传"></div></form>
 });
 
 //初始化侧栏
 face.popover('show');
-face.bind('hide.bs.popover',function(){
-    $('#up_form').css('display','block');
-    $('#cut_face').css('display','none');
-    $('#up_file').val('');
-    $up_txt.html('');
-});
 
 var $up_form = $('#up_form');
 var $up_txt = $('#up_txt');
 var $cut = $('#cut');
+var $up_p = $('#up_form p');
+var $up_content = $('.up_content');
+var $cut_face = $('#cut_face');
+var $cut_img = $('#target');
+var $cut_preview = $('.jcrop-preview');
+var $cut_sub = $('.cxbtn');
 
-//上传图片input验证
-$('#up_file').bind('change',function(){
+//初始化侧栏
+face.bind('hide.bs.popover',function(){
+    $cut_face.css('display','none');
+    $up_p.css('display','block');
+    $up_content.css('display','block');
+    $('#up_file').val('');
+    $up_txt.html('');
+});
+
+
+
+//var img_url;
+//获得file中图片本地路径
+var getImgUrl = function(id){
+    var img_file,
+        img_url;
+    if(typeof id === "string"&&id !== ''){
+        img_file = document.getElementById(id);
+    }
+    else{
+        img_file = id;
+    }
+    //取得图片本地路径
+    if(navigator.userAgent.toLocaleLowerCase().indexOf('msie') !== -1) {
+        img_file.select();
+        //IE下取得图片的本地路径
+        img_url = document.selection.createRange().text;
+    }
+//    } else if(isFirefox = navigator.userAgent.indexOf("Firefox")>0) {
+    else{
+        if (img_file.files) {  // Firefox下取得的是图片的数据
+            if(img_file.files.item(0).getAsDataURL){
+                img_url = img_file.files.item(0).getAsDataURL()
+            }
+            else{
+                img_url = window.URL.createObjectURL(img_file.files.item(0));
+            }
+        }
+        else{
+            img_url = img_file.value;
+        }
+    }
+    return img_url;
+};
+
+//图片input验证
+var img_check = function(){
     var file = this.value;
-//    console.log(file);
-//    alert(1);
+    //必须为jpg、png或gif
     var jpg = file.match(/[^\\]+.jpg/);
     var png = file.match(/[^\\]+.png/);
     var gif = file.match(/[^\\]+.gif/);
@@ -46,90 +123,136 @@ $('#up_file').bind('change',function(){
         $up_txt.html('');
     }
     else{
-        alert('请选择正确的图片格式')
+        alert('请选择正确的图片格式');
     }
+};
+//绑定input验证change事件
+$('#up_file').bind('change',img_check);
+
+//下一步按钮
+$('.up_next').bind('click',function(){
+    var img_url;
+    //上传图片不能为空
+    if($up_txt.html() === ''||$up_txt.html() === null){
+        alert('请先选择图片');
+        return false;
+    }
+    var file = $('#up_file').val();
+    var jpg = file.match(/[^\\]+.jpg/);
+    var png = file.match(/[^\\]+.png/);
+    var gif = file.match(/[^\\]+.gif/);
+    if(!jpg&&!png&&!gif){
+        alert('请选择正确的图片格式');
+        return false;
+    }
+    //取得图片本地路径
+    img_url = getImgUrl('up_file');
+    //填充src
+    $cut_img.attr('src',img_url);
+    $cut_preview.attr('src',img_url);
+    //运行jcrop
+    if($('.jcrop-holder')[0] === undefined){
+        cut_img();
+    }
+    else{
+        jcrop_api.setImage(img_url);
+        select(jcrop_api);
+        $("[alt = '[Jcrop Example]']").bind('load',function(){
+            select(jcrop_api);
+        });
+    }
+
+    $('.arrow').css('top','20%');
+    //显示与隐藏
+    $up_p.css('display','none');
+    $up_content.css('display','none');
+    $cut_face.css('display','block');
 });
-//上传图片表单验证
-var file_check = new form_check({
+//上一步按钮
+$('.cut_close').bind('click',function(){
+    $cut_face.css('display','none');
+    $up_p.css('display','block');
+    $up_content.css('display','block');
+});
+//数据上传验证
+var cut_check = new form_check({
     form:'#up_form',
     check:[function(){
-        //上传图片不能为空
-        if($up_txt.html()==''||$up_txt.html()==null){
-            alert('请先选择图片');
-            return false;
+        var x = typeof parseInt($('#x').val()) === 'number';
+        var y = typeof parseInt($('#y').val()) === 'number';
+        var w = typeof parseInt($('#w').val()) === 'number';
+        var h = typeof parseInt($('#h').val()) === 'number';
+        if(x&&y&&w&&h){
+            return true;
         }
-        var file = $('#up_file').val();
-        var jpg = file.match(/[^\\]+.jpg/);
-        var png = file.match(/[^\\]+.png/);
-        var gif = file.match(/[^\\]+.gif/);
-        if(!jpg&&!png&&!gif){
-            alert('请选择正确的图片格式');
-            return false;
-        }
-        return true;
+        return false;
     }],
-    //ajax上传，返回图片url，回调进入预裁剪界面
     success:function(){
-//        alert(1);
-        $up_form.css('display','none');
-        var img_url = "img/face.jpg";
-        if($('#cut_face')[0] === undefined){
-            $cut.append('<div id="cut_face">'+
-                '<img src='+img_url+' id="target" alt="[Jcrop Example]" />'+
-                '<div id="preview-pane">'+
-                '<div class="preview-container">'+
-                '<img src='+img_url+' class="jcrop-preview" alt="Preview" />'+
-                '</div>'+
-                '</div>'+
-                '<div class="clearfix"></div>'+
-                '<form id="cut_form" action="#" method="post">'+
-                '<input type="hidden" id="x" name="x">'+
-                '<input type="hidden" id="y" name="y">'+
-                '<input type="hidden" id="w" name="w">'+
-                '<input type="hidden" id="h" name="h">'+
-                '<input class="cxbtn btn btn-primary" type="submit" value="上传头像">'+
-                '<input class="cut_close btn btn-primary" type="button" value="上一步">'+
-                '</form>'+
-                '</div>');
-            cut_img();
-            $('.cut_close').bind('click',function(){
-                $('#cut_face').css('display','none');
-                $up_form.css('display','block');
-//                return false;
-            });
-            var cut_check = new form_check({
-                form:'#cut_form',
-                check:[function(){
-                    var x = typeof parseInt($('#x').val()) === 'number';
-                    var y = typeof parseInt($('#y').val()) === 'number';
-                    var w = typeof parseInt($('#w').val()) === 'number';
-                    var h = typeof parseInt($('#h').val()) === 'number';
-                    if(x&&y&&w&&h){
-//                        alert(1);
-                        return true;
-                    }
-                    return false;
-                }]
-            });
-            cut_check.run();
-        }
-        else{
-            $('#target').attr('src',img_url);
-            $('.jcrop-preview').attr('src',img_url);
-            $('#cut_face').css('display','block');
-        }
-        $('.arrow').css('top','20%');
+        $cut_sub.button('loading');
+        jcrop_api.disable();
+        var x = $('#x').val();
+        var y = $('#y').val();
+        var w = $('#w').val();
+        var h = $('#h').val();
+        var img_data = {
+            x:x,
+            y:y,
+            w:w,
+            h:h
+        };
+//        img_data = JSON.stringify(img_data);
+        $.ajaxFileUpload({
+            url:'#',
+            secureuri:false,
+            fileElementId:'up_file',
+            dataType: 'json',
+            data:img_data,
+            success:function(data){
+                var respond = $.parseJSON(data);
+                $cut_sub.button('reset');
+                jcrop_api.enable();
+                //上传成功会解绑change,重新绑定
+                $('#up_file').bind('change',img_check);
+                if(typeof data.error !== "string"&&data.error !== ''){
+                    alert(data.error);
+                }
+                else{
+                    face.popover('hide');
+                    $face_img.attr('src',data.imgUrl);
+                }
+            },
+            error:function(){
+                $cut_sub.button('reset');
+                jcrop_api.enable();
+                //上传成功会解绑change,重新绑定
+                $('#up_file').bind('change',img_check);
+                alert('上传失败，请重试');
+            }
+        });
         return false;
     }
 });
-file_check.run();
+cut_check.run();
+
 face.popover('hide');
+//绘制选框
+var select = function(api){
+    // 改变图片实际宽长参数
+    var bounds = api.getBounds();
+    boundx = bounds[0];
+    boundy = bounds[1];
+    //绘制截取框
+    if(bounds[0] > bounds[1]){
+        api.setSelect([0,0,bounds[1],bounds[1]]);
+    }
+    else{
+        api.setSelect([0,0,bounds[0],bounds[0]]);
+    }
+//    alert(1);
+};
     // Create variables (in this scope) to hold the API and image size
 var cut_img = function(){
-        var jcrop_api,
-        boundx,
-        boundy,
-
+    var
         // Grab some information about the preview pane
         $preview = $('#preview-pane'),
         $pcnt = $('#preview-pane .preview-container'),
@@ -138,9 +261,9 @@ var cut_img = function(){
         holder = $('.jcrop-holder')[0],
 
         xsize = $pcnt.width(),
-        ysize = $pcnt.height(),
-        tar_wid = $tar.width(),
-        tar_hei = $tar.height();
+        ysize = $pcnt.height();
+//        tar_wid = $tar.width(),
+//        tar_hei = $tar.height();
 
     // if(tar_wid > tar_hei){
     //   $tar.css('width','300px');
@@ -149,29 +272,23 @@ var cut_img = function(){
     //   $tar.css('height','300px');
     // }
     // console.log('init',[xsize,ysize]);
+
     //裁剪设置
     $tar.Jcrop({
 //      maxSize:[400,400],
       minSize:[100,100],
       boxWidth:300,
       bgColor:'rgb(129,129,129)',
+      keySupport:false,
 //      allowSelect:false,
       onChange: updatePreview,
       onSelect: updateCoords,
       aspectRatio: 1
     },function(){
-
-      // 图片实际宽长
-      var bounds = this.getBounds();
-      boundx = bounds[0];
-      boundy = bounds[1];
-      //绘制截取框
-      if(tar_wid > tar_hei){
-        this.setSelect([0,0,tar_hei,tar_hei]);
-      }
-      else{
-        this.setSelect([0,0,tar_wid,tar_wid]);
-      }
+//        var bounds = this.getBounds();
+//        boundx = bounds[0];
+//        boundy = bounds[1];
+        select(this);
       // console.log(bounds);
       // 保存this(jcrop)到jcrop_api
       jcrop_api = this;
@@ -188,9 +305,11 @@ var cut_img = function(){
         //宽长放大倍数
         var rx = xsize / c.w;
         var ry = ysize / c.h;
+//          console.log(c);
         // console.log($pimg.css('width'));
         // console.log(boundx);
         // console.log(Math.round(rx * boundx) + 'px');
+//          console.log(boundx);
           //绘制预览框
         $pimg.css({
           width: Math.round(rx * boundx) + 'px',
@@ -208,5 +327,6 @@ var cut_img = function(){
       $('#w').val(Math.round(c.w));
       $('#h').val(Math.round(c.h));
     }
-  // });
+
 };
+});

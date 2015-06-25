@@ -14,7 +14,7 @@ body {
   font-family: Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 .navbar-fixed-top {
-  z-index: 2;
+  z-index: 3;
 }
 .nav_con_shadow {
   -webkit-box-shadow: 0 2px 1px 1px #dddddd;
@@ -114,6 +114,7 @@ body {
   top: 0;
   right: 0;
   z-index: 3;
+  display: none;
 }
 .complete form {
   width: 400px;
@@ -297,9 +298,9 @@ footer .renren {
   overflow: hidden;
 }
 .cxbtn {
-  margin: 5px;
+  margin-top: 5px;
 }
 .cut_close {
-  margin: 5px;
+  margin-top: 5px;
   float: right;
 }

@@ -101,11 +101,11 @@ body {
 #right_contair_help {
   height: 661px;
 }
-#right_contair_help div {
-  transition: all 1s ease;
-  -webkit-transition: all 1s ease;
-  -ms-tansition: all 1s ease;
-  -moz-tansition: all 1s ease;
+.have_alert {
+  overflow-x: auto;
+}
+.have_alert_con {
+  min-width: 600px;
 }
 .complete {
   width: 100%;

@@ -46,6 +46,7 @@ face.popover({
 face.popover('show');
 
 var $up_form = $('#up_form');
+var $up_file = $('#up_file');
 var $up_txt = $('#up_txt');
 var $cut = $('#cut');
 var $up_p = $('#up_form p');
@@ -60,7 +61,7 @@ face.bind('hide.bs.popover',function(){
     $cut_face.css('display','none');
     $up_p.css('display','block');
     $up_content.css('display','block');
-    $('#up_file').val('');
+    $up_file.val('');
     $up_txt.html('');
 });
 
@@ -127,7 +128,7 @@ var img_check = function(){
     }
 };
 //绑定input验证change事件
-$('#up_file').bind('change',img_check);
+$up_file.bind('change',img_check);
 
 //下一步按钮
 $('.up_next').bind('click',function(){
@@ -187,7 +188,7 @@ var cut_check = new form_check({
         }
         return false;
     }],
-    success:function(){
+    success:function(e){
         $cut_sub.button('loading');
         jcrop_api.disable();
         var x = $('#x').val();
@@ -212,21 +213,26 @@ var cut_check = new form_check({
                 $cut_sub.button('reset');
                 jcrop_api.enable();
                 //上传成功会解绑change,重新绑定
-                $('#up_file').bind('change',img_check);
-                if(typeof data.error !== "string"&&data.error !== ''){
-                    alert(data.error);
+                $up_file.bind('change',img_check);
+                //清空之前的选择
+                $up_txt.html('');
+                if(typeof respond.error !== "string"&&respond.error !== ''){
+                    alert(respond.error);
                 }
                 else{
                     face.popover('hide');
-                    $face_img.attr('src',data.imgUrl);
+                    $face_img.attr('src',respond.imgUrl);
                 }
             },
             error:function(){
                 $cut_sub.button('reset');
                 jcrop_api.enable();
                 //上传成功会解绑change,重新绑定
-                $('#up_file').bind('change',img_check);
+                $up_file.bind('change',img_check);
+                //清空之前的选择
+                $up_txt.html('');
                 alert('上传失败，请重试');
+                return false
             }
         });
         return false;

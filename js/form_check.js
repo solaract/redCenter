@@ -56,18 +56,17 @@ var form_check = (function(){
         }
     };
     var form_sub = function(target,check,success,fail){
-        target.bind('submit.form_check',function(){
+        target.bind('submit.form_check',function(e){
             var is_checked = true;
             $.each(check,function(index,fun){
                 if(!fun()){
                     is_checked = false;
-//                    alert(1);
                     return false;
                 }
             });
             if(is_checked){
                 if(success){
-                    var suc_re = success();
+                    var suc_re = success(e);
                     if(suc_re === false){
                         return false;
                     }
@@ -75,7 +74,7 @@ var form_check = (function(){
             }
             else{
                 if(fail){
-                    fail();
+                    fail(e);
                 }
                 return false;
             }

@@ -30,41 +30,41 @@ jQuery(function($) {
     for (var i = 0; i < imgsLen; i++) {
         imgs_helper(i);
     }
-//计算字符串编码长度（中文=2，英文=1）
-    var strCodeLen = function (str) {
-        var count = 0;
-        var len = str.length;
-        var code;
-        for (var i = 0; i < len; i++) {
-            //将i索引处的字符转成ASCII码
-            code = str.charCodeAt(i);
-            if (code >= 0 && code <= 128) {
-                count += 1;
-            }
-            else {
-                count += 2;
-            }
-        }
-        return count;
-    };
-//限制简介长度
-    var len = 0;
-    document.getElementById('intro').onkeydown = function (e) {
-        var codLen = strCodeLen(this.value);
-        //记录字符串长度
-        if (codLen <= 100) {
-            len = this.value.length;
-        }
-        if (codLen >= 100 && e.keyCode !== 8) {
-            // alert(len);
-            // console.log(codLen);
-            // console.log(len);
-            //按之前记录的长度裁剪字符串
-            this.value = this.value.substring(0, len);
-            //禁止默认事件
-            return false;
-        }
-    };
+////计算字符串编码长度（中文=2，英文=1）
+//    var strCodeLen = function (str) {
+//        var count = 0;
+//        var len = str.length;
+//        var code;
+//        for (var i = 0; i < len; i++) {
+//            //将i索引处的字符转成ASCII码
+//            code = str.charCodeAt(i);
+//            if (code >= 0 && code <= 128) {
+//                count += 1;
+//            }
+//            else {
+//                count += 2;
+//            }
+//        }
+//        return count;
+//    };
+////限制简介长度
+//    var len = 0;
+//    document.getElementById('intro').onkeydown = function (e) {
+//        var codLen = strCodeLen(this.value);
+//        //记录字符串长度
+//        if (codLen <= 100) {
+//            len = this.value.length;
+//        }
+//        if (codLen >= 100 && e.keyCode !== 8) {
+//            // alert(len);
+//            // console.log(codLen);
+//            // console.log(len);
+//            //按之前记录的长度裁剪字符串
+//            this.value = this.value.substring(0, len);
+//            //禁止默认事件
+//            return false;
+//        }
+//    };
 //昵称简介表单验证
     var det_check = new form_check({
         form: '#det_form',
@@ -77,6 +77,7 @@ jQuery(function($) {
             if (intro_now !== intro && intro_now !== '') {
                 return true;
             }
+            alert('请先修改信息');
             return false;
         }]
     });

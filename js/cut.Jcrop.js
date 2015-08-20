@@ -1,4 +1,4 @@
-jQuery(function($){
+//jQuery(function($){
 var face = $('.left_face');
 var $face_img = $('.left_face img');
 var jcrop_api;
@@ -100,52 +100,9 @@ var getImgUrl = function(id){
     }
     return img_url;
 };
-
-//图片input验证
-var img_check = function(){
-    var file = this.value;
-    //必须为jpg、png或gif
-    var jpg = file.match(/[^\\]+.jpg/);
-    var png = file.match(/[^\\]+.png/);
-    var gif = file.match(/[^\\]+.gif/);
-    if(jpg!==null){
-//        up_txt.innerHTML=jpg[0];
-        $up_txt.html(jpg[0]);
-    }
-    else if(png!==null){
-//        up_txt.innerHTML=png[0];
-        $up_txt.html(png[0]);
-    }
-    else if(gif!==null){
-//        up_txt.innerHTML=gif[0];
-        $up_txt.html(gif[0]);
-    }
-    else if(file === ''){
-        $up_txt.html('');
-    }
-    else{
-        alert('请选择正确的图片格式');
-    }
-};
-//绑定input验证change事件
-$up_file.bind('change',img_check);
-
-//下一步按钮
-$('.up_next').bind('click',function(){
+//图片提前加载
+var img_ready = function(){
     var img_url;
-    //上传图片不能为空
-    if($up_txt.html() === ''||$up_txt.html() === null){
-        alert('请先选择图片');
-        return false;
-    }
-    var file = $('#up_file').val();
-    var jpg = file.match(/[^\\]+.jpg/);
-    var png = file.match(/[^\\]+.png/);
-    var gif = file.match(/[^\\]+.gif/);
-    if(!jpg&&!png&&!gif){
-        alert('请选择正确的图片格式');
-        return false;
-    }
     //取得图片本地路径
     img_url = getImgUrl('up_file');
     //填充src
@@ -162,6 +119,55 @@ $('.up_next').bind('click',function(){
             select(jcrop_api);
         });
     }
+};
+//图片input验证
+var img_check = function(){
+    var file = this.value;
+    //必须为jpg、png或gif
+    var jpg = file.match(/[^\\]+.jpg/);
+    var png = file.match(/[^\\]+.png/);
+    var gif = file.match(/[^\\]+.gif/);
+    if(jpg!==null){
+//        up_txt.innerHTML=jpg[0];
+        $up_txt.html(jpg[0]);
+        img_ready();
+    }
+    else if(png!==null){
+//        up_txt.innerHTML=png[0];
+        $up_txt.html(png[0]);
+        img_ready();
+    }
+    else if(gif!==null){
+//        up_txt.innerHTML=gif[0];
+        $up_txt.html(gif[0]);
+        img_ready();
+    }
+    else if(file === ''){
+        $up_txt.html('');
+    }
+    else{
+        alert('请选择正确的图片格式');
+    }
+};
+//绑定input验证change事件
+$up_file.bind('change',img_check);
+
+//下一步按钮
+$('.up_next').bind('click',function(){
+    //上传图片不能为空
+    if($up_txt.html() === ''||$up_txt.html() === null){
+        alert('请先选择图片');
+        return false;
+    }
+    var file = $('#up_file').val();
+    var jpg = file.match(/[^\\]+.jpg/);
+    var png = file.match(/[^\\]+.png/);
+    var gif = file.match(/[^\\]+.gif/);
+    if(!jpg&&!png&&!gif){
+        alert('请选择正确的图片格式');
+        return false;
+    }
+
 
     $('.arrow').css('top','20%');
     //显示与隐藏
@@ -174,6 +180,7 @@ $('.cut_close').bind('click',function(){
     $cut_face.css('display','none');
     $up_p.css('display','block');
     $up_content.css('display','block');
+    $('.arrow').css('top','50%');
 });
 //数据上传验证
 var cut_check = new form_check({
@@ -212,10 +219,6 @@ var cut_check = new form_check({
                 var respond = $.parseJSON(data);
                 $cut_sub.button('reset');
                 jcrop_api.enable();
-                //上传成功会解绑change,重新绑定
-                $up_file.bind('change',img_check);
-                //清空之前的选择
-                $up_txt.html('');
                 if(typeof respond.error !== "string"&&respond.error !== ''){
                     alert(respond.error);
                 }
@@ -227,14 +230,15 @@ var cut_check = new form_check({
             error:function(){
                 $cut_sub.button('reset');
                 jcrop_api.enable();
-                //上传成功会解绑change,重新绑定
-                $up_file.bind('change',img_check);
-                //清空之前的选择
-                $up_txt.html('');
                 alert('上传失败，请重试');
                 return false
             }
         });
+        //清空之前的选择
+        $up_file.val('');
+        $up_txt.html('');
+        //上传成功会解绑change,重新绑定
+        $('#up_file').bind('change',img_check);
         return false;
     }
 });
@@ -335,4 +339,4 @@ var cut_img = function(){
     }
 
 };
-});
+//});

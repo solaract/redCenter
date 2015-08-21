@@ -32,6 +32,12 @@ body {
   height: 80px;
   resize: none;
 }
+#inputAsk {
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
 .complete_info {
   float: left;
   margin-left: 74px;

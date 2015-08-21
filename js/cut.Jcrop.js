@@ -1,4 +1,4 @@
-//jQuery(function($){
+jQuery(function($){
 var face = $('.left_face');
 var $face_img = $('.left_face img');
 var jcrop_api;
@@ -208,7 +208,7 @@ var cut_check = new form_check({
             w:w,
             h:h
         };
-//        img_data = JSON.stringify(img_data);
+        img_data = JSON.stringify(img_data);
         $.ajaxFileUpload({
             url:'#',
             secureuri:false,
@@ -339,4 +339,4 @@ var cut_img = function(){
     }
 
 };
-//});
+});

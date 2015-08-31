@@ -4,13 +4,23 @@
 jQuery(function($) {
     var name;
     var intro;
+    var user = document.querySelector('.nav_user');
     var $face = $('.left_face');
     $face.tooltip({title: '点击自定义头像', trigger: 'hover', placement: 'top'});
     $(document).ready(function () {
-        name = $('#name').val();
+        if($('.complete').css('display') === 'none'){
+            $face.tooltip('show');
+        }
+        var str = user.firstChild.data;
+        name = str.substr(3,str.search(/\s/)-3);
         intro = $('#intro').val();
     });
-//console.log(name);
+    $face.bind('mouseover',function(){
+        var scrolltop = document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrolltop >= 43) {
+            $face.tooltip('hide');
+        }
+    });
 //顶部阴影添加
     $(window).scroll(function (e) {
         var scrolltop = document.documentElement.scrollTop || document.body.scrollTop;
@@ -20,6 +30,9 @@ jQuery(function($) {
         else {
             $('.nav_con').attr('class', 'container-fluid nav_con');
         }
+        $('.tooltip').each(function(){
+            $(this).css('display','none');
+        })
     });
 //物品兑换图片长宽对齐
     var exchangeImgs = $('#right_contair_exchange img');
@@ -30,6 +43,33 @@ jQuery(function($) {
     for (var i = 0; i < imgsLen; i++) {
         imgs_helper(i);
     }
+//ajax成功后回调
+    var suc_cb = function suc_cb(data){
+        var respond = $.parseJSON(data);
+        if(typeof respond.error !== "string"&&respond.error !== ''){
+            alert(respond.error);
+            return false;
+        }
+        else{
+            if(respond.name&&typeof respond.name === "string"){
+                if(respond.name.length > 10){
+                    respond.name = respond.name.substr(0,10);
+                }
+                name = respond.name;
+            }
+            $('#name').val(name);
+            user.firstChild.data = '你好，'+name;
+            if(respond.intro&&typeof respond.intro === "string"){
+                if(respond.intro.length > 60){
+                    respond.intro = respond.intro.substr(0,60);
+                }
+                intro = respond.intro;
+            }
+            $('#intro').val(intro);
+            alert('修改成功！');
+            return true;
+        }
+    };
 //昵称简介表单验证
     var det_check = new form_check({
         form: '#det_form',
@@ -67,29 +107,7 @@ jQuery(function($) {
                 url:'#',
                 data:det_data,
                 dataType:'json',
-                success:function(data){
-                    var respond = $.parseJSON(data);
-                    if(typeof respond.error !== "string"&&respond.error !== ''){
-                        alert(respond.error);
-                    }
-                    else{
-                        if(respond.name&&typeof respond.name === "string"){
-                            if(respond.name.length > 10){
-                                respond.name = respond.name.substr(0,10);
-                            }
-                            name = respond.name;
-                        }
-                        $('#name').val(name);
-                        if(respond.intro&&typeof respond.intro === "string"){
-                            if(respond.intro.length > 60){
-                                respond.intro = respond.intro.substr(0,60);
-                            }
-                            intro = respond.intro;
-                        }
-                        $('#intro').val(intro);
-                        alert('修改成功！');
-                    }
-                },
+                success:suc_cb,
                 error:function(){
                     alert('上传失败');
                 }
@@ -181,26 +199,7 @@ jQuery(function($) {
                 data:com_data,
                 dataType:'json',
                 success:function(data){
-                    var respond = $.parseJSON(data);
-                    if(typeof respond.error !== "string"&&respond.error !== ''){
-                        alert(respond.error);
-                    }
-                    else{
-                        if(respond.name&&typeof respond.name === "string"){
-                            if(respond.name.length > 10){
-                                respond.name = respond.name.substr(0,10);
-                            }
-                            name = respond.name;
-                        }
-                        $('#name').val(name);
-                        if(respond.intro&&typeof respond.intro === "string"){
-                            if(respond.intro.length > 60){
-                                respond.intro = respond.intro.substr(0,60);
-                            }
-                            intro = respond.intro;
-                        }
-                        $('#intro').val(intro);
-                        alert('修改成功！');
+                    if(suc_cb(data)){
                         $('.complete').css('display','none');
                     }
                 },
